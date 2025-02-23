@@ -1,8 +1,7 @@
 pipeline {
     agent any
-    environment {
-        PATH = "/opt/homebrew/bin:$PATH"
-        M2_HOME = "/opt/homebrew/Cellar/maven/3.x.x/libexec"
+    tools {
+        maven 'Maven'  // Name of Maven tool configured in Jenkins
     }
     stages {
         stage('Checkout') {
@@ -13,11 +12,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean package'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deployment Completed"
             }
         }
     }
