@@ -5,6 +5,13 @@
     <title>maven-lab2</title>
 </head>
 <body>
-<h1>Welcome to COMP367</h1>
+<h1 id="greeting">Welcome to COMP367</h1>
+
+<script>
+    let now = new Date();
+    let hours = now.getHours();
+    let greeting = hours < 12 ? "Good morning" : "Good afternoon";
+    document.getElementById("greeting").innerText = greeting + ", Welcome to COMP367";
+</script>
 </body>
 </html>
